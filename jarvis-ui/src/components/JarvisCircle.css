@@ -1,0 +1,147 @@
+.container {
+  height: 100vh;
+  overflow: hidden;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+  background: radial-gradient(circle at center, #0d001a, #000000 70%);
+}
+
+/* NEBULA BACKGROUND */
+
+.nebula {
+  position: absolute;
+  width: 200%;
+  height: 200%;
+
+  background:
+    radial-gradient(circle at 30% 40%, #6a00ff55, transparent 40%),
+    radial-gradient(circle at 70% 60%, #ff00cc33, transparent 40%),
+    radial-gradient(circle at 50% 80%, #4b00ff33, transparent 40%);
+
+  filter: blur(120px);
+  animation: nebulaMove 40s linear infinite;
+}
+
+@keyframes nebulaMove {
+  from { transform: translate(-10%, -10%); }
+  to { transform: translate(10%, 10%); }
+}
+
+/* STAR FIELD */
+
+.stars {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+
+  background-image:
+    radial-gradient(white 1px, transparent 1px),
+    radial-gradient(#c77dff 1px, transparent 1px);
+
+  background-size: 80px 80px, 120px 120px;
+
+  opacity: 0.6;
+}
+
+/* SPHERE */
+
+.sphere {
+  width: 320px;
+  height: 320px;
+
+  border-radius: 50%;
+  position: relative;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  backdrop-filter: blur(10px);
+
+  background: radial-gradient(
+    circle at 30% 30%,
+    #ffffff22,
+    #b347ff55,
+    #1a0033
+  );
+
+  border: 2px solid rgba(255,255,255,0.2);
+
+  box-shadow:
+    0 0 40px #c77dff,
+    0 0 120px #9d4edd,
+    inset 0 0 60px #ff9cf5;
+
+  animation: float 5s ease-in-out infinite;
+}
+
+/* INNER GALAXY SWIRL */
+
+.inner-galaxy {
+  position: absolute;
+  width: 220px;
+  height: 220px;
+
+  border-radius: 50%;
+
+  background:
+    radial-gradient(circle at center, #ffffff44, transparent 60%),
+    radial-gradient(circle at 40% 60%, #ff00cc66, transparent 60%),
+    radial-gradient(circle at 60% 40%, #7b00ff66, transparent 60%);
+
+  filter: blur(20px);
+
+  animation: rotateGalaxy 20s linear infinite;
+}
+
+@keyframes rotateGalaxy {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* FLOAT */
+
+@keyframes float {
+  0% { transform: translateY(0px); }
+  50% { transform: translateY(-15px); }
+  100% { transform: translateY(0px); }
+}
+
+/* SPEAKING EFFECT */
+
+.sphere.active {
+  transform: scale(1.1);
+
+  box-shadow:
+    0 0 80px #ff9cf5,
+    0 0 160px #c77dff,
+    0 0 260px #7209b7;
+}
+
+/* TEXT */
+
+.jarvis-text {
+  position: absolute;
+
+  font-size: 34px;
+  font-weight: bold;
+  letter-spacing: 6px;
+
+  color: white;
+
+  text-shadow:
+    0 0 10px white,
+    0 0 20px #c77dff,
+    0 0 40px #9d4edd;
+}
+
+.response {
+  margin-top: 50px;
+  font-size: 22px;
+  color: #e0b3ff;
+}

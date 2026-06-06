@@ -1,7 +1,7 @@
-import ArcReactor from "./ArcReactor";
+import JarvisCircle from "./components/JarvisCircle";
 
 function App() {
-  return <ArcReactor />;
+  return <JarvisCircle />;
 }
 
 export default App;
